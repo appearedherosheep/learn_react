@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+  <script>
+    const root = document.getElementById("root");
+    const span = React.createElement(
+      "span",
+      { id: "sexy-span" },
+      "hello im span"
+    );
+    //createelement 안의 값은 html태그와 같은 이름
+    ReactDOM.render(span, root);
+    // render : show it to the user,  react element로 html을 만들어 배치
+    // render의 두번째 argument: span의 property
+    // 세번째 argument : span의 content
+  </script>
+</html>
+
+<!-- react : html 생성, 어플리케이션이 interactive하도록 만들어주는 library, 엔진과 같다. ui를 만들어 줄 수 있다 -->
+<!-- react-dom : react element를 html body에 둘 수 있도록 해주는 라이브러리-->
