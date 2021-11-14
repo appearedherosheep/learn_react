@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    const root = document.getElementById("root");
+
+    // function Title() {
+    //   return (
+    //     <h3 id="title" onMouseEnter={() => console.log("mouse enter")}>
+    //       Hello im title
+    //     </h3>
+    //   );
+    // }
+    // arrow function : 위에 거랑 똑같음, 함수를 만들어서 리턴
+    const Title = () => (
+      <h3 id="title" onMouseEnter={() => console.log("mouse enter")}>
+        Hello im title
+      </h3>
+    );
+    const Button = () => (
+      <button
+        style={{ backgroundColor: "tomato" }}
+        onClick={() => console.log("im clicked")}
+      >
+        click me
+      </button>
+    );
+
+    // const container = React.createElement("div", null, [Title, btn]);
+    const Container = (
+      <div>
+        <Title />
+        <Button />
+      </div>
+      // 컴포넌트는 반드시 대문자로 쓰도록, 일반 태그랑 헷갈려서
+      //   그냥 리액트할 때는 다 대문자로 만들자
+    );
+    ReactDOM.render(Container, root);
+  </script>
+</html>
