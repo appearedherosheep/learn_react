@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    const root = document.getElementById("root");
+    let counter = 0;
+    function countup() {
+      counter = counter + 1;
+      render();
+    }
+    function render() {
+      ReactDOM.render(<Container />, root);
+      // 요로케 하면 countup함수 호출될 때마다 컨테이너 다시 렌더
+    }
+    const Container = () => (
+      <div>
+        <h3>Total click: {counter}</h3>
+        <button onClick={countup}>Click me</button>
+      </div>
+    );
+    render();
+    // 우리가 페이지를 로드했을 때 바로 실행됨 위에 애들은 바로 실행 안됨 호출해야 실행
+  </script>
+</html>
